@@ -62,10 +62,22 @@ pub struct ServerConf {
     /// defined by the SSL library will be used.
     pub ca_file: Option<String>,
     // These options don't belong here as they are specific to certain services
+    /// IPv4 addresses for a client connector to bind to. See [`ConnectorOptions`].
+    /// Note: this is an _unstable_ field that may be renamed or removed in the future.
     pub client_bind_to_ipv4: Vec<String>,
+    /// IPv6 addresses for a client connector to bind to. See [`ConnectorOptions`].
+    /// Note: this is an _unstable_ field that may be renamed or removed in the future.
     pub client_bind_to_ipv6: Vec<String>,
+    /// Keepalive pool size for client connections to upstream. See [`ConnectorOptions`].
+    /// Note: this is an _unstable_ field that may be renamed or removed in the future.
     pub upstream_keepalive_pool_size: usize,
+    /// Number of dedicated thread pools to use for upstream connection establishment.
+    /// See [`ConnectorOptions`].
+    /// Note: this is an _unstable_ field that may be renamed or removed in the future.
     pub upstream_connect_offload_threadpools: Option<usize>,
+    /// Number of threads per dedicated upstream connection establishment pool.
+    /// See [`ConnectorOptions`].
+    /// Note: this is an _unstable_ field that may be renamed or removed in the future.
     pub upstream_connect_offload_thread_per_pool: Option<usize>,
 }
 
