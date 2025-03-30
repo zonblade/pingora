@@ -63,7 +63,7 @@ type CaseMap = HMap<CaseHeaderName>;
 ///
 /// [RequestHeader] implements [Deref] for [http::request::Parts] so it can be used as it in most
 /// places.
-#[derive(Debug)]
+#[derive(Debug, DerefMut)]
 pub struct RequestHeader {
     base: ReqParts,
     header_name_map: Option<CaseMap>,
